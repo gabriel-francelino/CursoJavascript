@@ -19,7 +19,7 @@ const nome = readline.question('Qual é o seu nome? ');
 console.log('Olá, ' + nome + '!');
 
 // Solicitando uma entrada numérica ao usuário
-const idade = readline.questionInt('Quantos anos você tem? ');
+const idade = Number(readline.questionInt('Quantos anos você tem? '));
 console.log('Você tem ' + idade + ' anos.');
 
 // Solicitando uma escolha do usuário
