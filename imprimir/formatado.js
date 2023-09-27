@@ -4,6 +4,7 @@ const idade = 30;
 const cidade = "São Paulo";
 
 console.log(`Nome: ${nome}, Idade: ${idade}, Cidade: ${cidade}`);
+console.log('Nome: ', nome, 'Idade:', idade, 'Cidade:', cidade);
 
 // Exemplo usando console.table() para imprimir um objeto em formato de tabela
 const pessoa = {
