@@ -1,51 +1,67 @@
-// Para criar um array em JavaScript, você pode usar a seguinte sintaxe:
+// Inicialização de Arrays -------------------------------------------------------------------------------
+var frutas = ['maçã', 'banana', 'laranja'];
+var carros = new Array('Ford', 'Toyota', 'Honda');
+var numeros = [];
 
-// Usando colchetes []
-let frutas = [];
-frutas[0] = "maçã";
-frutas[1] = "banana";
-frutas[2] = "laranja";
+console.log("Array 'frutas' inicial:", frutas);
+console.log("Array 'carros' inicial:", carros);
+console.log("Array 'numeros' inicial:", numeros);
 
-// Usando a função Array()
-let num = new Array(5); // Cria um vetor com 5 elementos undefined
+// Acesso a Valores de Arrays ----------------------------------------------------------------------------
+var primeiraFruta = frutas[0]; // Acessa o primeiro elemento ("maçã")
+var segundoCarro = carros[1];  // Acessa o segundo elemento ("Toyota")
 
-// Inicialização direta
-let cores = ["vermelho", "azul", "verde"];
+console.log("Primeira fruta:", primeiraFruta);
+console.log("Segundo carro:", segundoCarro);
 
-// Usando Array.from()
-let texto = "JavaScript";
-let caracteres = Array.from(texto);
+// Percorrendo Arrays com um Loop for
+console.log("Percorrendo o array 'frutas':");
+for (var i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]);
+}
 
+// Percorrendo Arrays com um Loop for...of
+console.log("\nPercorrendo o array 'carros':");
+for (var carro of carros) {
+    console.log(carro);
+}
 
-// Imprimindo valores do array
-console.log(frutas[0]); // Saída: "maçã"
-console.log(frutas[1]); // Saída: "banana"
-console.log(frutas[2]); // Saída: "laranja"
+// Métodos de Arrays ---------------------------------------------------------------------------------------
+console.log("\nUsando métodos de arrays:");
+console.log('Array frutas', frutas)
+// Adiciona um elemento ao final do array
+frutas.push('uva');
+console.log("Array 'frutas' após push('uva'):", frutas);
 
-// Métodos dos arrays
-const numeros = [1, 2, 3, 4, 5];
+// Remove o último elemento do array
+var ultimaFruta = frutas.pop();
+console.log("Array 'frutas' após pop():", frutas);
 
-// Obtendo o tamanho do array
-console.log(numeros.length); // Saída: 5
+// Adiciona um elemento no início do array
+frutas.unshift('abacaxi');
+console.log("Array 'frutas' após unshift('abacaxi'):", frutas);
 
-// Adicionando elementos no final do array
-numeros.push(6);
-console.log(numeros); // Saída: [1, 2, 3, 4, 5, 6]
+// Remove o primeiro elemento do array
+var primeiraFrutaRemovida = frutas.shift();
+console.log("Array 'frutas' após shift():", frutas);
 
-// Removendo o último elemento do array
-numeros.pop();
-console.log(numeros); // Saída: [1, 2, 3, 4, 5]
+// Permite adicionar, remover ou substituir elementos em qualquer posição do array
+frutas.splice(1, 1);        // Remove o segundo elemento ('banana')
+console.log("Array 'frutas' após splice(1, 1):", frutas);
 
-// Pesquisando um elemento no array
-console.log(numeros.indexOf(3)); // Saída: 2 (índice do elemento 3)
+frutas.splice(1, 0, 'manga'); // Adiciona 'manga' na segunda posição
+console.log("Array 'frutas' após splice(1, 0, 'manga'):", frutas);
 
-// Removendo elementos usando splice
-numeros.splice(1, 2); // Remove 2 elementos a partir do índice 1
-console.log(numeros); // Saída: [1, 4, 5]
+// Cria uma cópia rasa de uma parte do array
+var copiaFrutas = frutas.slice(0, 2); // Cria uma cópia dos dois primeiros elementos
+console.log("Cópia do array 'frutas' após slice(0, 2):", copiaFrutas);
 
-// slice
-// join
-// include
-// shift
-// unshift
+// Combina dois ou mais arrays
+var maisFrutas = frutas.concat(['pera', 'kiwi']);
+console.log("Array 'maisFrutas' após concat(['pera', 'kiwi']):", maisFrutas);
 
+// Executa uma função em cada elemento do array
+console.log("\nPercorrendo o array 'maisFrutas':");
+maisFrutas.forEach(function (fruta) {
+    console.log(fruta);
+});
