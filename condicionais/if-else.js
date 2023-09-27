@@ -11,5 +11,6 @@ if (nota >= 90) {
 
 // if ternário
 const idade = 20;
+// variavel = condição ? retorno se verdadeiro : retorno se falso
 const mensagem = idade >= 18 ? "Maior de idade" : "Menor de idade";
 console.log(mensagem); // Saída: "Maior de idade"
